@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+
+:root {
+
+    --color-neutral-0: #fffdf9;
+    --color-neutral-1: #f5ebdf;
+    --color-neutral-2: #e7d7c3;
+    --color-neutral-3: #d2bea5;
+    --color-neutral-4: #b79a7d;
+    --color-neutral-5: #8f715d;
+    --color-neutral-6: #6d5445;
+    --color-neutral-7: #49372f;
+    --color-neutral-8: #2b201c;
+    --color-neutral-9: #15110e;
+
+    --color-primary-1: #4c9b7a;
+    --color-primary-2: #357d63;
+    --color-primary-3: #255f4a;
+
+    --color-secondary-1: #f4a261;
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-neutral-3);
+    box-sizing: border-box;
+}
+
+
+.tic-tac-toe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    align-items: center;
+}
+
+
+.tic-tac-toe-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+
+.tic-tac-toe-cell {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary-1);
+    border-radius: 20px;
+}
+
+
+.tic-tac-toe-cell i {
+    font-size: 70px;
+}
+
+
+.tic-tac-toe-row:has(.tic-tac-toe-cell.highlight) > .tic-tac-toe-cell:not(.highlight) {
+    opacity: 0.6;
+}
+
+
+.tic-tac-toe-cell.highlight {
+    background-color: var(--color-primary-2);
+}
+
+
+.tic-tac-toe-cell:not(.filled) {
+    cursor: pointer;
+}
+
+
+#btn-refresh {
+    background-color: var(--color-secondary-1);
+    color: var(--color-neutral-8);
+    border: none;
+    padding: 15px 30px;
+    font-size: 21px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+
+    &:hover {
+        background-color: var(--color-primary-2);
+        color: var(--color-neutral-0);
+    }   
+}
